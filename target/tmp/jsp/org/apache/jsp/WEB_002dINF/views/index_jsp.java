@@ -320,6 +320,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </div>\r\n");
       out.write("                            <div id=\"check1\" class=\"panel-collapse collapse in\" aria-expanded=\"true\" style=\"\">\r\n");
       out.write("                                <div class=\"panel-body\">\r\n");
+      out.write("                                    <div id=\"login-message-div\"></div>\r\n");
       out.write("                                    <form id=\"loginForm\" class=\"form-horizontal\">\r\n");
       out.write("                                        <fieldset>\r\n");
       out.write("                                            <div class=\"control-group\">\r\n");
@@ -335,7 +336,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            </div>\r\n");
       out.write("                                            <br/>\r\n");
       out.write("                                            <div class=\"form-actions\">\r\n");
-      out.write("                                                <button type=\"button\" class=\"btn btn-primary\">Valider</button>\r\n");
+      out.write("                                                <button type=\"button\" class=\"btn btn-primary\" onclick=\"index.login('");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("')\">Valider</button>\r\n");
       out.write("                                                <button type=\"button\" class=\"btn col-sm-offset-1\">Mot de passe oublié</button>\r\n");
       out.write("                                            </div>\r\n");
       out.write("                                            <br/>\r\n");
@@ -363,7 +366,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </div>\r\n");
       out.write("                            <div id=\"check1\" class=\"panel-collapse collapse in\" aria-expanded=\"true\" style=\"\">\r\n");
       out.write("                                <div class=\"panel-body\">\r\n");
-      out.write("                                    <div id=\"message-div\"></div>\r\n");
+      out.write("                                    <div id=\"registration-message-div\"></div>\r\n");
       out.write("                                    <form id=\"registrationForm\" class=\"form-horizontal\">\r\n");
       out.write("                                        <fieldset>\r\n");
       out.write("                                            <div class=\"control-group\">\r\n");

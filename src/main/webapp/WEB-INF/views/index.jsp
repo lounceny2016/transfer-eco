@@ -265,6 +265,7 @@
                             </div>
                             <div id="check1" class="panel-collapse collapse in" aria-expanded="true" style="">
                                 <div class="panel-body">
+                                    <div id="login-message-div"></div>
                                     <form id="loginForm" class="form-horizontal">
                                         <fieldset>
                                             <div class="control-group">
@@ -280,7 +281,7 @@
                                             </div>
                                             <br/>
                                             <div class="form-actions">
-                                                <button type="button" class="btn btn-primary">Valider</button>
+                                                <button type="button" class="btn btn-primary" onclick="index.login('${contextPath}')">Valider</button>
                                                 <button type="button" class="btn col-sm-offset-1">Mot de passe oublié</button>
                                             </div>
                                             <br/>
@@ -308,7 +309,7 @@
                             </div>
                             <div id="check1" class="panel-collapse collapse in" aria-expanded="true" style="">
                                 <div class="panel-body">
-                                    <div id="message-div"></div>
+                                    <div id="registration-message-div"></div>
                                     <form id="registrationForm" class="form-horizontal">
                                         <fieldset>
                                             <div class="control-group">
