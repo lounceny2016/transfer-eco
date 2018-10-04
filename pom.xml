@@ -183,17 +183,17 @@
     </dependency>
 
     <!-- Mysql Driver -->
-    <!--<dependency>-->
-      <!--<groupId>mysql</groupId>-->
-      <!--<artifactId>mysql-connector-java</artifactId>-->
-      <!--<version>${mysql-connector.version}</version>-->
-    <!--</dependency>-->
-
     <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>${postgre.version}</version>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql-connector.version}</version>
     </dependency>
+
+    <!--<dependency>-->
+      <!--<groupId>org.postgresql</groupId>-->
+      <!--<artifactId>postgresql</artifactId>-->
+      <!--<version>${postgre.version}</version>-->
+    <!--</dependency>-->
 
     <!-- dbcp -->
     <dependency>

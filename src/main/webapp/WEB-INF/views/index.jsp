@@ -308,7 +308,7 @@
                             </div>
                             <div id="check1" class="panel-collapse collapse in" aria-expanded="true" style="">
                                 <div class="panel-body">
-                                    <div id="success-message"></div>
+                                    <div id="message-div"></div>
                                     <form id="registrationForm" class="form-horizontal">
                                         <fieldset>
                                             <div class="control-group">
@@ -343,7 +343,7 @@
                                             <br/>
                                             <br/>
                                             <div class="form-actions">
-                                                <button type="button" class="btn btn-primary" onclick="index.register()">Valider</button>
+                                                <button type="button" class="btn btn-primary" onclick="index.register('${contextPath}')">Valider</button>
                                             </div>
                                             <br/>
                                         </fieldset>

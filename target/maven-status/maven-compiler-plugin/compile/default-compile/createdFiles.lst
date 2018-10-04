@@ -1,5 +1,6 @@
 com\transferEco\config\DBConfig.class
 com\transferEco\controller\HomeController.class
+com\transferEco\controller\BaseController.class
 com\transferEco\config\MvcWebApplicationInitializer.class
 com\transferEco\controller\UserController.class
 com\transferEco\domain\entity\User.class

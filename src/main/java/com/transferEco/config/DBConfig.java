@@ -17,7 +17,7 @@ import static org.hibernate.cfg.AvailableSettings.C3P0_MAX_STATEMENTS;
 
 
 @Configuration
-@PropertySource("classpath:postgresdb.properties")
+@PropertySource("classpath:dev-db.properties")
 @EnableTransactionManagement
 public class DBConfig {
     @Autowired
@@ -38,10 +38,10 @@ public class DBConfig {
     @Bean
     public DataSource getDataSource() {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(env.getProperty("postgres.driver"));
-        dataSource.setUrl(env.getProperty("postgres.url"));
-        dataSource.setUsername(env.getProperty("postgres.username"));
-        dataSource.setPassword(env.getProperty("postgres.password"));
+        dataSource.setDriverClassName(env.getProperty("mysql.driver"));
+        dataSource.setUrl(env.getProperty("mysql.jdbcUrl"));
+        dataSource.setUsername(env.getProperty("mysql.username"));
+        dataSource.setPassword(env.getProperty("mysql.password"));
         return dataSource;
     }
     @Bean
