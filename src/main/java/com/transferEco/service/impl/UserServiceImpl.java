@@ -46,4 +46,39 @@ public class UserServiceImpl implements UserService {
         }
         return response;
     }
+
+    @Override
+    public Response login(HttpServletRequest request) {
+        Response response = new Response();
+        try {
+            String email = request.getParameter("loginEmail");
+            String password = request.getParameter("loginPassword");
+            long userId = userDao.isValidUser(email, password);
+            if (userId != 0){
+                User dbUser = userDao.findUserById(userId);
+                response.setStatus(true);
+                response.setMessage("Connexion avec succes.");
+                response.setData(dbUser);
+            } else {
+                response.setStatus(false);
+                response.setMessage("E-mail ou mot de passe invalid.");
+            }
+        } catch (Exception e){
+            logger.error("--------------------Exception:",e);
+            response.setStatus(false);
+            response.setMessage(e.getMessage());
+        }
+        return response;
+    }
+
+    @Override
+    public User findUserById(Long userId) {
+        User dbUser = null;
+        try {
+            dbUser = userDao.findUserById(userId);
+        } catch (Exception e){
+            logger.error("--------------------Exception:",e);
+        }
+        return dbUser;
+    }
 }

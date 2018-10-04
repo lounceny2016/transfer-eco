@@ -40,23 +40,21 @@ var index = {
         });
 
         var url = contextPath+'/user/login';
-        console.log(formData);
-        // $.ajax({
-        //     type: 'POST',
-        //     url: url,
-        //     data : formData,
-        //     success: function(response){
-        //         if (response.status){
-        //             $('#login-message-div').after('<div id="alert-div" class="alert alert-success alert-dismissible"></div>');
-        //             $('#alert-div').append('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>');
-        //             $('#alert-div').append(response.message);
-        //         } else {
-        //             $('#login-message-div').after('<div id="alert-div" class="alert alert-danger alert-dismissible"></div>');
-        //             $('#alert-div').append('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>');
-        //             $('#alert-div').append(response.message);
-        //         }
-        //     }
-        // });
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data : formData,
+            success: function(response){
+                if (response.status){
+                    var user = response.data;
+                    window.location = contextPath+'/home?userId='+user.id;
+                } else {
+                    $('#login-message-div').after('<div id="alert-div" class="alert alert-danger alert-dismissible"></div>');
+                    $('#alert-div').append('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>');
+                    $('#alert-div').append(response.message);
+                }
+            }
+        });
 
     }
 

@@ -35,4 +35,18 @@ public class UserController {
         return response;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Response login(HttpServletRequest request){
+       Response response = new Response();
+        try {
+            response = userService.login(request);
+        } catch (Exception e){
+            logger.error("--------------------Exception:",e);
+            response.setStatus(false);
+            response.setMessage(e.getMessage());
+        }
+       return response;
+    }
+
 }

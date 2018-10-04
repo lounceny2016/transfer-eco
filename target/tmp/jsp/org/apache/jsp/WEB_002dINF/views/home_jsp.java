@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -127,7 +127,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <!-- Brand -->\r\n");
       out.write("                            <a class=\"navbar-brand page-scroll sticky-logo pull-left\" href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/index\">\r\n");
+      out.write("/home?userId=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\">\r\n");
       out.write("                                <h1><span></span>Tr@nsferEco</h1>\r\n");
       out.write("                                <!-- Uncomment below if you prefer to use an image logo -->\r\n");
       out.write("                                <!-- <img src=\"img/logo.png\" alt=\"\" title=\"\"> -->\r\n");
@@ -145,9 +147,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <li>\r\n");
       out.write("                                    <a class=\"page-scroll\" href=\"#services\">Mon compte</a>\r\n");
       out.write("                                </li>\r\n");
-      out.write("                                <!--<li>-->\r\n");
-      out.write("                                <!--<a class=\"page-scroll\" href=\"#contact\">Contactez nous</a>-->\r\n");
-      out.write("                                <!--</li>-->\r\n");
+      out.write("                                <li>\r\n");
+      out.write("                                    <a class=\"page-scroll\" href=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/index\">Déconnexion</a>\r\n");
+      out.write("                                </li>\r\n");
       out.write("                            </ul>\r\n");
       out.write("                        </div>\r\n");
       out.write("                        <!-- navbar-collapse -->\r\n");

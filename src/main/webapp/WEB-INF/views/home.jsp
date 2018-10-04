@@ -70,7 +70,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <!-- Brand -->
-                            <a class="navbar-brand page-scroll sticky-logo pull-left" href="${contextPath}/index">
+                            <a class="navbar-brand page-scroll sticky-logo pull-left" href="${contextPath}/home?userId=${user.id}">
                                 <h1><span></span>Tr@nsferEco</h1>
                                 <!-- Uncomment below if you prefer to use an image logo -->
                                 <!-- <img src="img/logo.png" alt="" title=""> -->
@@ -88,9 +88,9 @@
                                 <li>
                                     <a class="page-scroll" href="#services">Mon compte</a>
                                 </li>
-                                <!--<li>-->
-                                <!--<a class="page-scroll" href="#contact">Contactez nous</a>-->
-                                <!--</li>-->
+                                <li>
+                                    <a class="page-scroll" href="${contextPath}/index">Déconnexion</a>
+                                </li>
                             </ul>
                         </div>
                         <!-- navbar-collapse -->
