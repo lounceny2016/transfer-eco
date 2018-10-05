@@ -15,6 +15,9 @@ var index = {
             type: 'POST',
             url: url,
             data : formData,
+            beforeSend: function () {
+                $('#loader').show();
+            },
             success: function(response){
                 if (response.status){
                     $('#registration-message-div').after('<div id="alert-div" class="alert alert-success alert-dismissible"></div>');
@@ -25,6 +28,9 @@ var index = {
                     $('#alert-div').append('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>');
                     $('#alert-div').append(response.message);
                 }
+            },
+            complete: function () {
+                $('#loader').hide();
             }
         });
 
@@ -44,6 +50,9 @@ var index = {
             type: 'POST',
             url: url,
             data : formData,
+            beforeSend: function () {
+                $('#loader').show();
+            },
             success: function(response){
                 if (response.status){
                     var user = response.data;
@@ -53,6 +62,9 @@ var index = {
                     $('#alert-div').append('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>');
                     $('#alert-div').append(response.message);
                 }
+            },
+            complete: function () {
+                $('#loader').hide();
             }
         });
 

@@ -251,6 +251,9 @@
         </div>
         <br/>
         <div class="row">
+            <div id="loader" class="hidden">
+                <img class="center-block" id="loading-image" src="resources/website/img/preloader.gif" alt="Loading..." />
+            </div>
             <div class="col-md-6 col-xs-12">
                 <div class="faq-details">
                     <div class="panel-group" id="accordion">
