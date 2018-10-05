@@ -68,6 +68,10 @@ var index = {
             }
         });
 
+    },
+
+    initPage: function () {
+        $('#loader').hide();
     }
 
 }

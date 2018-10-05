@@ -48,9 +48,8 @@
     ======================================================= -->
 </head>
 
-<body data-spy="scroll" data-target="#navbar-example">
+<body data-spy="scroll" data-target="#navbar-example" onload="index.initPage()">
 
-<div id="preloader"></div>
 
 <header>
     <!-- header-area start -->
@@ -251,7 +250,7 @@
         </div>
         <br/>
         <div class="row">
-            <div id="loader" class="hidden">
+            <div id="loader">
                 <img class="center-block" id="loading-image" src="resources/website/img/preloader.gif" alt="Loading..." />
             </div>
             <div class="col-md-6 col-xs-12">
