@@ -17,7 +17,7 @@ import static org.hibernate.cfg.AvailableSettings.C3P0_MAX_STATEMENTS;
 
 
 @Configuration
-@PropertySource("classpath:dev-db.properties")
+@PropertySource("classpath:prod-db.properties")
 @EnableTransactionManagement
 public class DBConfig {
     @Autowired
