@@ -50,6 +50,7 @@
 
 <body data-spy="scroll" data-target="#navbar-example" onload="index.initPage()">
 
+<div id="preloader"></div>
 
 <header>
     <!-- header-area start -->
@@ -69,7 +70,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <!-- Brand -->
-                            <a class="navbar-brand page-scroll sticky-logo pull-left" href="${contextPath}/index">
+                            <a class="navbar-brand page-scroll sticky-logo pull-left" href="${contextPath}/home?userId=${user.id}">
                                 <h1><span></span>Tr@nsferEco</h1>
                                 <!-- Uncomment below if you prefer to use an image logo -->
                                 <!-- <img src="img/logo.png" alt="" title=""> -->
@@ -87,9 +88,6 @@
                                 <li>
                                     <a class="page-scroll" href="#services">Mon compte</a>
                                 </li>
-                                <!--<li>-->
-                                <!--<a class="page-scroll" href="#contact">Contactez nous</a>-->
-                                <!--</li>-->
                             </ul>
                         </div>
                         <!-- navbar-collapse -->
@@ -191,48 +189,108 @@
 <!-- End Slider Area -->
 
 <!-- Start About area -->
-<div id="about" class="about-area area-padding">
+<div id="about" class="services-area area-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="section-headline text-center">
+                <div class="section-headline services-head text-center">
                     <h2>Comment ça marche</h2>
+                </div>
+                <br/>
+                <div class="services-head text-center">
+                    <h3>En 3 clics, envoyez des bonds d'achats à vos proches.<br/> Rapide et sécurisé.<br/><p class="text-danger"> 24h/24 & 7j/7.</p></h3>
                 </div>
             </div>
         </div>
+        <br/>
         <div class="row">
-            <!-- single-well start-->
-            <!-- single-well end-->
-            <div class="col-md-12 col-sm-12">
-                <div class="well-middle">
-                    <div class="single-well">
-                        <a href="#">
-                            <h4 class="sec-head">project Maintenance</h4>
-                        </a>
-                        <p>
-                            Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
-                        </p>
-                        <ul>
-                            <li>
-                                <i class="fa fa-check"></i> Interior design Package
-                            </li>
-                            <li>
-                                <i class="fa fa-check"></i> Building House
-                            </li>
-                            <li>
-                                <i class="fa fa-check"></i> Reparing of Residentail Roof
-                            </li>
-                            <li>
-                                <i class="fa fa-check"></i> Renovaion of Commercial Office
-                            </li>
-                            <li>
-                                <i class="fa fa-check"></i> Make Quality Products
-                            </li>
-                        </ul>
+
+            <%--transfer form div --%>
+            <div class="col-sm-8">
+                <form>
+
+                    <div class="row col-sm-offset-5">
+                        <img src="resources/website/img/laptop.png">
+                    </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="row">
+
+                        <fieldset class="col-sm-6">
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input id="transferAmount" type="text" oninput="index.updateTransferFee()" name="transferAmount" class="form-control" placeholder="Saisissez la ici la valeur">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="col-sm-6">
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input id="transferFee" type="text" name="transferFee" class="form-control" id="" placeholder="Total à payer" readonly>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <%--Exchange rate panel div --%>
+            <div class="col-sm-4 pull-right">
+                <div class="faq-details">
+                    <div class="panel-group" id="accordion-4">
+                        <!-- Panel Default -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="check-title">
+                                    <a data-toggle="collapse" class="active" data-parent="#accordion" href="#" aria-expanded="true">
+                                        <span class=""></span>Bourse
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="check1-3" class="panel-collapse collapse in" aria-expanded="true" style="">
+                                <div class="panel-body">
+                                    <table class="table table-striped table-bordered bootstrap-datable datatable">
+                                        <thead>
+                                        <tr>
+                                            <th>Monnaie étrangère</th>
+                                            <th>Franc guinéen</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1 EUR</td>
+                                            <td>10.471,44 GNF</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1 USD</td>
+                                            <td>9.116,39 GNF</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1 GBP</td>
+                                            <td>11.929,47 GNF</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1 FCFA</td>
+                                            <td>16.0033 GNF</td>
+                                        </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Panel Default -->
+                        <!-- Panel Default -->
                     </div>
                 </div>
             </div>
-            <!-- End col-->
+
         </div>
     </div>
 </div>
@@ -249,13 +307,14 @@
             </div>
         </div>
         <br/>
+        <br/>
         <div class="row">
             <div id="loader">
                 <img class="center-block" id="loading-image" src="resources/website/img/preloader.gif" alt="Loading..." />
             </div>
             <div class="col-md-6 col-xs-12">
                 <div class="faq-details">
-                    <div class="panel-group" id="accordion">
+                    <div class="panel-group" id="accordion-3">
                         <!-- Panel Default -->
                         <div class="panel panel-default">
                             <div class="panel-heading">
@@ -265,7 +324,7 @@
                                     </a>
                                 </h4>
                             </div>
-                            <div id="check1" class="panel-collapse collapse in" aria-expanded="true" style="">
+                            <div id="check3" class="panel-collapse collapse in" aria-expanded="true" style="">
                                 <div class="panel-body">
                                     <div id="login-message-div"></div>
                                     <form id="loginForm" class="form-horizontal">

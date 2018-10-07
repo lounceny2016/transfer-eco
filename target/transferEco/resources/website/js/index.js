@@ -1,5 +1,6 @@
 var index = {
 
+    transferRate: 0.05,
 
     register: function (contextPath) {
 
@@ -68,6 +69,12 @@ var index = {
             }
         });
 
+    },
+
+    updateTransferFee: function () {
+        var transferAmount = $('#transferAmount').val();
+        var transferFee = transferAmount * this.transferRate;
+        $('#transferFee').val(transferFee.toFixed(2));
     },
 
     initPage: function () {
